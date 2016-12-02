@@ -1,1 +1,238 @@
+\documentclass[a4paper, 11pt]{book}
+\usepackage{comment} 
+\usepackage{fullpage}
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\textwidth=15cm
+\pagestyle{empty}
+\topmargin=-1.5cm
+\oddsidemargin=0pt
+\parindent=0pt
+\setcounter{chapter}{3}
+\setcounter{section}{5}
+\setcounter{subsection}{2}
+\setcounter{equation}{35}
+\usepackage[fleqn]{amsmath} 
+\usepackage{color}
+\definecolor{light-gray}{rgb}{0.8,0.8,0.8}
 
+\begin{document}
+\large\textit{3.5 Predicting the period of a pendulum}\hfill \textbf{49} \\
+\vspace{15pt}
+
+the pendulum’s amplitude $\theta_{0}$ is already a dimensionless group, so it can
+affect the period of the system.\\
+
+
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+
+\textbf{Problem 3.30~~~Choosing dimensionless groups}
+
+Check that period T, length l, gravitational strength g, and amplitude $\theta_{0}$ produce
+two independent dimensionless groups. In constructing useful groups for
+analyzing the period, why should T appear in only one group? And why should
+$\theta_{0}$ not appear in the same group as T?
+
+\end{minipage} }
+\vspace{5pt}
+
+Two dimensionless groups produce the general dimensionless form
+\begin{equation}
+\textrm {one group = function of the other group,} 
+\end{equation}
+so
+\begin{equation}
+\frac{T}{\sqrt{l/g}}=
+\textrm{function of $\theta_{0}$}.
+\end{equation}
+\vspace{5pt}
+
+Because $T/{\sqrt{l/g}}=2\pi $ when $\theta_{0}=0$ (the small-amplitude limit), factor out
+the  to simplify the subsequent equations, and define a dimensionless
+period h as follows:
+\begin{equation}
+\frac{T}{\sqrt{l/g}}=2\pi h(\theta_{0}).
+\end{equation}
+
+The function $h$ contains all information about how amplitude affects the
+period of a pendulum. Using h, the original question about the period becomes
+the following: Is $h$ an increasing, constant, or decreasing function
+of amplitude? This question is answered in the following section.
+
+\subsection{Large amplitudes: Extreme cases again}
+
+For guessing the general behavior of $h$ as a function of amplitude, useful
+clues come from evaluating $h$ at two amplitudes. One easy amplitude is
+the extreme of zero amplitude, where $h(0) = 1$. A second easy amplitude
+is the opposite extreme of large amplitudes.\\
+
+
+\it {How does the period behave at large amplitudes? As part of that question, what
+is a large amplitude?}\\
+
+
+\rm An interesting large amplitude is $\pi/2$, which means releasing the pendulum
+from horizontal. However, at $\pi/2$ the exact $h$ is the following awful
+expression (Problem 3.31):
+
+\newpage
+\large\textbf{50} \hfill \textit{3 Lumping} \\
+\vspace{0pt}
+
+\begin{equation}
+h\left ( \pi /2 \right )= \frac{\sqrt{2}}{\pi }\int_{0}^{\pi /2}\frac{\mathrm{d} \theta }{\sqrt{cos\theta }}.
+\end{equation}
+
+Is this integral less than, equal to, or more than 1? Who knows? The integral
+is likely to have no closed form and to require numerical evaluation
+(Problem 3.32).
+
+\vspace{10pt}
+
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+
+\textbf{Problem 3.31~~~General expression for $h$}
+
+Use conservation of energy to show that the period is
+\begin{equation}
+T(\theta _{0})=2\sqrt{2}\sqrt{\frac{l}{g}}\int_{0}^{\theta _{0}}\frac{\mathrm{d} \theta _{0}}{\sqrt{cos\theta -cos\theta _{0}}}.
+\end{equation}
+Confirm that the equivalent dimensionless statement is
+\begin{equation}
+h(\theta _{0})=2\sqrt{2}\sqrt{\frac{l}{g}}\int_{0}^{\theta _{0}}\frac{\mathrm{d} \theta _{0}}{\sqrt{cos\theta -cos\theta _{0}}}.
+\end{equation}
+For horizontal release, $\theta _{0}=\pi/2$, and
+\begin{equation}
+h\left ( \pi /2 \right )= \frac{\sqrt{2}}{\pi }\int_{0}^{\pi /2}\frac{\mathrm{d} \theta }{\sqrt{cos\theta }}.
+\end{equation}
+\textbf{Problem 3.32~~~Numerical evaluation for horizontal release}
+
+Why do the lumping recipes (Section 3.2) fail for the integrals in Problem 3.31?
+Compute $h(\pi/2)$ using numerical integration.
+
+\end{minipage} }
+\vspace{5pt}
+
+Because $ \theta _{0}= \pi/2$ is not a helpful extreme, be even more extreme. Try $ \theta _{0}= \pi$, which means releasing the pendulum bob from vertical. If the
+bob is connected to the pivot point by a string, however, a vertical release
+would mean that the bob falls straight down instead of oscillating. This
+novel behavior is neither included in nor described by the pendulum
+differential equation.
+\vspace{6pt}
+
+Fortunately, a thought experiment is cheap to improve:
+Replace the string with a massless steel
+rod. Balanced perfectly at $ \theta _{0}= \pi$, the pendulum
+bob hangs upside down forever, so $T(\pi) = ∞$ and
+$h(\pi) = ∞$. Thus, $h(\pi) > 1$ and $h(0) = 1$. From
+these data, the most likely conjecture is that h increases
+monotonically with amplitude. Although
+h could first decrease and then increase, such twists and turns would
+be surprising behavior from such a clean differential equation. (For the
+behavior of h near $ \theta _{0}= \pi$, see Problem 3.34).
+
+\newpage
+\large\textit{3.5 Predicting the period of a pendulum}\hfill \textbf{51} \\
+\vspace{15pt}
+
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+
+\textbf{Problem 3.33~~~Small but nonzero amplitude}
+
+
+As the amplitude approaches $\pi$, the dimensionless period $h$
+diverges to infinity; at zero amplitude, $h = 1$. But what about
+the derivative of $h$? At zero amplitude $(\theta_{0} = 0)$, does $h(\theta_{0})$
+have zero slope (curve $A$) or positive slope (curve $B$)?
+\vspace{20pt}
+
+\textbf{Problem 3.34~~~Nearly vertical release}
+
+Imagine releasing the pendulum from almost vertical:
+an initial angle $\pi$ − $\beta$ with $\beta$ tiny. As a function of $\beta$,
+roughly how long does the pendulum take to rotate by
+a significant angle—say, by 1 rad? Use that information
+to predict how $h(\theta_{0})$ behaves when $\theta_{0}
+≈ \pi$. Check and
+refine your conjectures using the tabulated values. Then
+predict $h(\pi−10^{−5})$.
+\end{minipage} }
+
+\subsection{Moderate amplitudes: Applying lumping}
+
+The conjecture that h increases monotonically was derived using the extremes
+of zero and vertical amplitude, so it should apply at intermediate
+amplitudes. Before taking that statement on faith, recall a proverb from
+arms-control negotiations: “Trust, but verify.”\\
+
+\it{At moderate (small but nonzero) amplitudes, does the period, or its dimensionless
+cousin h, increase with amplitude?}\\
+
+\rm In the zero-amplitude extreme, $sin~\theta$ is close to $\theta$. That approximation
+turned the nonlinear pendulum equation
+\begin{equation}
+\frac{\mathrm{d}^2\theta }{\mathrm{d} t^2}+\frac{g}{l}~sin~\theta=0
+\end{equation}
+
+into the linear, ideal-spring equation—in which the period is independent
+of amplitude.
+\vspace{6pt}
+
+At nonzero amplitude, however, $\theta$ and $sin \theta$ differ and their difference
+affects the period. To account for the difference and predict the period,
+split $sin \theta$ into the tractable factor $\theta$ and an adjustment factor $f(\theta)$. The resulting equation is
+\begin{equation}
+\frac{\mathrm{d}^2\theta }{\mathrm{d} t^2}+\frac{g}{l}\theta\underbrace{\frac{sin \theta}{\theta}}_{f(\theta)}=0.
+\end{equation}
+
+\newpage
+\large\textbf{52} \hfill \textit{3 Lumping} \\
+\vspace{15pt}
+
+The nonconstant $f(\theta)$ encapsulates the nonlinearity of $f(\theta)$
+the pendulum equation. When $\theta$ is tiny, $f(\theta) ≈ 1$: The
+pendulum behaves like a linear, ideal-spring system.
+But when $\theta$ is large, $f(\theta)$ falls significantly below 1,
+making the ideal-spring approximation significantly
+inaccurate. As is often the case, a changing process is
+difficult to analyze—for example, see the awful integrals in Problem 3.31.
+As a countermeasure, make a lumping approximation by replacing the
+changing $f(\theta)$ with a constant.\\
+
+The simplest constant is$f(\theta)$. Then the pendulum differential equation becomes
+\begin{equation}
+\frac{\mathrm{d}^2\theta }{\mathrm{d} t^2}+\frac{g}{l}\theta=0.
+\end{equation}\\
+
+This equation is, again, the ideal-spring equation. In this approximation, period does not depend on amplitude, so $h = 1$ for
+all amplitudes. For determining how the period of an unapproximated
+pendulum depends on amplitude, the $f(\theta) → f(0)$ lumping approximation
+discards too much information.\\
+
+Therefore, replace $f(\theta)$ with the other extreme
+$f(\theta_0)$. Then the pendulum equation becomes
+\begin{equation}
+\frac{\mathrm{d}^2\theta }{\mathrm{d} t^2}+\frac{g}{l}\theta f(\theta_0)=0.
+\end{equation}\\
+\it {Is this equation linear? What physical system does
+it describe?}\\
+
+\rm Because $f(\theta_0)$ is a constant, this equation is linear! It describes a zeroamplitude
+pendulum on a planet with gravity geff that is slightly weaker
+than earth gravity—as shown by the following slight regrouping:
+\begin{equation}
+\frac{\mathrm{d}^2\theta }{\mathrm{d} t^2}+\overbrace{\frac{g\mathrm{f}(\theta_0)}{\theta}}^{g_{e\mathrm{ff}}}\theta=0.
+\end{equation}\\
+Because the zero-amplitude pendulum has period $T=2\pi \sqrt{l/g}$, the zeroamplitude,
+low-gravity pendulum has period
+\begin{equation}
+T(\theta_0)\approx 2\pi \sqrt{\frac{l}{g_{e\mathrm{ff}}}}=2\pi \sqrt{\frac{l}{g\mathrm{f(\theta_0)}}}.
+\end{equation}
+
+
+
+\end{document}
