@@ -5,11 +5,11 @@ int main()
 {
     float a, b, c, d, x, x1, x2;
     printf("Введите коэффициент а: ");
-    scanf("%f", a);
+    scanf("%f", &a);
     printf("Введите коэффициент b: ");
-    scanf("%f", b);
+    scanf("%f", &b);
     printf("Введите коэффициент c: ");
-    scanf("%f", c);
+    scanf("%f", &c);
     
     d = b*b-4*a*c;
      
