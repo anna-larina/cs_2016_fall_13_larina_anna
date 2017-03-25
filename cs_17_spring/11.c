@@ -9,7 +9,7 @@ int main()
 setlocale(LC_CTYPE, "Russian");
     int i, k, S;
     char z[1000];
-    printf("Vvedite chislo:");
+    printf("Введите число:");
     
     gets(z);
 
