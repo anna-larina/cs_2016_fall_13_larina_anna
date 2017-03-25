@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
 int main()
-{
+
+ 
+ {   setlocale(LC_CTYPE, "Russian");
+  
     float a, b, c, d, x, x1, x2;
     printf("Введите коэффициент а: ");
     scanf("%f", &a);
