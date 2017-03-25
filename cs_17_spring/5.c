@@ -1,7 +1,8 @@
 #include <stdio.h>
-
+#include <locale.h>
 int main()
-{
+{   setlocale(LC_CTYPE, "Russian");
+ 
     float c, m, f;
     printf( "Введите нижнюю границу:");
     scanf("%f", &c);
