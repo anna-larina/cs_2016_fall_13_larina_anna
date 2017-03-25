@@ -1,8 +1,9 @@
 #include <stdio.h>
-
+#iclude <locale.h>
 int main ()
 
 { 
+    setlocale(LC_CTYPE, "Russian");
     float a, b, c, d, x, y;
     printf ("Введите комплексное сопростивление a+bi, c+di :\n");
     scanf("%f+%fi, %f+%fi", &a, &b, &c, &d);
