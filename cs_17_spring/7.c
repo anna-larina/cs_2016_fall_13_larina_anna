@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <locale.h>
  int main()
  
- {
+ {   setlocale(LC_CTYPE, "Russian");
+  
      int i;
      float  a, b, c;
      char x;
@@ -34,7 +36,7 @@
         c *=a;
         }
      if (x =='%')
-     { c = a/100*b;
+     { c = (int)a/100*(int)b;
      }
      
      printf("%.2f\n", c);
