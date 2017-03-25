@@ -15,24 +15,27 @@
          
      }
      
-     else if (x == '-')
+     if (x == '-')
      { 
          c = a-b;
      }
      
-     else if (x == '*')
+     if (x == '*')
      {
          c = a*b;
      }
-     else if (x == '/')
+     if (x == '/')
      {
          c = a/b;
      }
-      else if(x == '^')
+     if(x == '^')
      c = 1;
         { for (i = 0; i < b; i++)
         c *=a;
         }
+     if (x =='%')
+     { c = a/100*b;
+     }
      
      printf("%.2f\n", c);
      
