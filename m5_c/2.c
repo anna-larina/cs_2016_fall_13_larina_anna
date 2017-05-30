@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <locale.h>
 
-#define N 1000000 
+#define n 1000000 
 
 float mainFunction(float x) 
 {
@@ -13,16 +14,15 @@ float mainFunction(float x)
 
 int main()
 {
-
 	setlocale(LC_CTYPE, "Russian");
 	float h, a, b, x;
 	double S = 0;
-  printf(" Этот метод реализует численное дифференцирование по трем точкам функции y=x^2.\n");
+  	printf(" Этот метод реализует численное дифференцирование по трем точкам функции y=x^2.\n");
 	printf("Введите нижнюю границу: ");
 	scanf("%f", &a);
 	printf("Введите верхнюю границу: ");
 	scanf("%f", &b);
-	h = (b - a) / N;
+	h = (b - a) / n;
 	x = a + h;
 	while (x < b)
 	{
