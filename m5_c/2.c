@@ -17,7 +17,12 @@ int main()
 	setlocale(LC_CTYPE, "Russian");
 	float h, a, b, x;
 	double S = 0;
-  	printf(" Этот метод реализует численное интегрирование по методу Симпсона функции y=x^2.\n");
+	char z;
+  	printf("Этот метод реализует численное интегрирование по методу Симпсона функции y=x^2.\n");
+	printf("Введите необходимую размерность (Max:9): ");
+	scanf("%c", &z);
+	char string[] = "%.zf\n";
+	string[2] = z;
 	printf("Введите нижнюю границу: ");
 	scanf("%f", &a);
 	printf("Введите верхнюю границу: ");
@@ -35,6 +40,6 @@ int main()
 	}
 
 	S = ((h/3)*(mainFunction(a) + mainFunction(b) + S)); 
-	printf("%.3f",S);
+	printf(string ,S);
 	return 0;
 }
