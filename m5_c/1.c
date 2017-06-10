@@ -14,13 +14,8 @@ int main()
 	float D = 0;
 	float D1 = 0;
 	float D2 = 0;
- 	char z;
 	
 	printf(" Этот метод реализует численное дифференцирование по трем точкам функции y=x^2. \n");
-	printf(" Введите необходимую размерность (Max:9): ");
-	scanf("%c", &z);
-	char string[] = "%.zf\n";
-	string[2] = z;
 	printf("Введите нижнюю границу интервала: ");
 	scanf("%f", &a);
 	printf("Введите верхнюю границу интервала: ");
@@ -30,13 +25,13 @@ int main()
 	x = a;
 	D1 = (1 / (2 * h))*((-3) * mainFunction(x) + 4 * (mainFunction(x + h)) - (mainFunction(x + 2 * h)));
 	D2 = (1 / (2 * h))*(-mainFunction(x) + mainFunction(x + 2 * h));
-	printf(string, D1);
-	printf(string, D2);
+	printf("%.3f\n", D1);
+	printf("%.3f\n", D2);
 	while (x + 2 * h <= b) 
 	{
 		D = (1 / (2 * h))*(mainFunction(x) - 4 * (mainFunction(x + h)) + 3 * (mainFunction(x + 2 * h)));
 		x = x + h;
-		printf(string, D);
+		printf("%.3f\n", D);
 	}
 	return 0;
 }
